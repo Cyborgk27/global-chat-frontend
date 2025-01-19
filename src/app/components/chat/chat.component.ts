@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WebsocketService } from '../../services/websocket.service';
+import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DefaultChatBubbleComponent } from '../default-chat-bubble/default-chat-bubble.component';
@@ -15,7 +16,7 @@ import { DefaultChatBubbleComponent } from '../default-chat-bubble/default-chat-
   styleUrl: './chat.component.css'
 })
 export class ChatComponent implements OnInit {
-  username: string = 'Alexkiller'; // El nombre de usuario puede ser dinámico
+  username: string = ''; // El nombre de usuario puede ser dinámico
   content: string = '';
   messages: Array<any> = []; // Lista para almacenar los mensajes recibidos
 
